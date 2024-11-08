@@ -1,0 +1,33 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Java compiled files
+out/
+*.class
+
+# OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Java build files
+target/
+build/
+
+# JAR files
+*.jar
+
+# Eclipse files (if used)
+.project
+.classpath
+.settings/
+
+# Maven or Gradle build files
+pom.xml
+.gradle/
