@@ -19,7 +19,7 @@ A simple two-player TicTacToe game implemented in Java. Players alternate turns 
 
 1. Clone this repository:
 ```bash
-   git clone https://github.com/your-username/tictactoe.git
+   git clone https://github.com/your-username/TicTacToe-Java.git
 ```
 
 2. Navigate to the project directory:
