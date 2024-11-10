@@ -1,12 +1,15 @@
-package com.tictactoe;
+package com.tictactoe.boards;
+
+import com.tictactoe.Controller;
 
 import java.util.ArrayList;
 
-public class NestedBoard {
-    ArrayList<MiniBoard> MiniBoards = new ArrayList<>();
+public class NestedBoard extends Controller {
+    ArrayList<MiniBoard> miniBoards = new ArrayList<>();
+    enum nestedBoardState{WON, DREW, LOST, NOT_PLAYED, PLAYING};
     public NestedBoard () {
         for (int i = 0; i < 9; i++) {
-            MiniBoards.add(new MiniBoard());
+            miniBoards.add(new MiniBoard());
         }
     }
 
@@ -18,7 +21,7 @@ public class NestedBoard {
 
             for (int minirow = 1; minirow <= 3; minirow++) {
                 for (int i = 0; i < 3; i++) {
-                    MiniBoards.get(i).printRow(minirow);
+                    miniBoards.get(i).printRow(minirow);
                     if (i < 2) {
                         System.out.print(" | ");
                     } else {

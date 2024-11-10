@@ -1,6 +1,11 @@
-package com.tictactoe;
+package com.tictactoe.boards;
 
-class Board {
+import com.tictactoe.Controller;
+
+public class Board extends Controller{
+    private char[] board = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    enum boardState{WON, DREW, LOST, NOT_PLAYED, PLAYING};
+
     public static void render (char[] entries) {
         System.out.printf("\n\n======== TIC TAC TOE ========\n\n");
         System.out.printf("         |         |         \n");
