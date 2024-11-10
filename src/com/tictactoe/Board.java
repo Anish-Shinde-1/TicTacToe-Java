@@ -1,7 +1,5 @@
 package com.tictactoe;
 
-import java.io.IOException;
-
 class Board {
     public static void render (char[] entries) {
         System.out.printf("\n\n======== TIC TAC TOE ========\n\n");
@@ -18,3 +16,18 @@ class Board {
         System.out.printf("         |         |         \n\n");
     }
 }
+
+/*
+                 |         |
+            1    |    2    |    3
+                 |         |
+        ---------+---------+---------
+                 |         |
+            4    |    5    |    6
+                 |         |
+        ---------+---------+---------
+                 |         |
+            7    |    8    |    9
+                 |         |
+
+*/
