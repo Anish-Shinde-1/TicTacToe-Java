@@ -1,16 +1,26 @@
 package com.tictactoe.boards;
 
 import com.tictactoe.Controller;
+import com.tictactoe.NestedController;
 
 import java.util.ArrayList;
 
-public class NestedBoard extends Controller {
+public class NestedBoard extends NestedController {
     ArrayList<MiniBoard> miniBoards = new ArrayList<>();
-    enum nestedBoardState{WON, DREW, LOST, NOT_PLAYED, PLAYING};
+    boardState nestedBoardState;
+
     public NestedBoard () {
         for (int i = 0; i < 9; i++) {
             miniBoards.add(new MiniBoard());
         }
+    }
+
+    public void setNestedboardState(boardState state){
+        this.nestedBoardState = state;
+    }
+
+    public boardState getNestedboardState() {
+        return nestedBoardState;
     }
 
     public void render() {

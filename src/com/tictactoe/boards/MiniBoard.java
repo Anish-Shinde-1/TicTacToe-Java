@@ -1,10 +1,27 @@
 package com.tictactoe.boards;
 
 import com.tictactoe.Controller;
+import com.tictactoe.NestedController;
 
-public class MiniBoard extends Controller {
+public class MiniBoard extends NestedController {
     private char[] miniBoard = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-    enum miniBoardState {WON, DREW, LOST, NOT_PLAYED, PLAYING};
+    boardState miniboardState;
+
+    public MiniBoard (){
+        this.miniboardState = boardState.NOT_PLAYED;
+    }
+
+    public void setState(boardState state){
+        this.miniboardState = state;
+    }
+
+    public boardState getState() {
+        return miniboardState;
+    }
+
+    public void updateMiniBoard(int index, char entry) {
+        this.miniBoard[index-1] = entry;
+    }
 
     public void printRow(int row) {
         int i;
@@ -19,13 +36,10 @@ public class MiniBoard extends Controller {
         System.out.printf("\t\t %c  |  %c  |  %c\t\t", this.miniBoard[i], this.miniBoard[i+1], this.miniBoard[i+2]);
     }
 
-    public void updateMiniBoard(int index, char entry) {
-        this.miniBoard[index-1] = entry;
-    }
+
 
 //    public static void main(String[] args) {
 //        MiniBoard mb1 = new MiniBoard();
-//        mb1.printRow(1);
 //    }
 }
 

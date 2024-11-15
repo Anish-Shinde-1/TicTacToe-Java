@@ -3,21 +3,42 @@ package com.tictactoe.boards;
 import com.tictactoe.Controller;
 
 public class Board extends Controller{
-    private char[] board = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
-    enum boardState{WON, DREW, LOST, NOT_PLAYED, PLAYING};
+    public char[] board = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    boardState state;
 
-    public static void render (char[] entries) {
+    public Board (int mode){
+        super(mode);
+        this.state = boardState.NOT_PLAYED;
+    }
+
+    public Board (){
+        this.state = boardState.NOT_PLAYED;
+    }
+
+    public void setState(boardState state){
+        this.state = state;
+    }
+
+    public boardState getState() {
+        return state;
+    }
+
+    public void updateBoard(int index, char entry) {
+        this.board[index-1] = entry;
+    }
+
+    public void render () {
         System.out.printf("\n\n======== TIC TAC TOE ========\n\n");
         System.out.printf("         |         |         \n");
-        System.out.printf("    %c    |    %c    |    %c    \n", entries[0], entries[1], entries[2]);
+        System.out.printf("    %c    |    %c    |    %c    \n", this.board[0], this.board[1],this.board[2]);
         System.out.printf("         |         |         \n");
         System.out.printf("---------+---------+---------\n");
         System.out.printf("         |         |         \n");
-        System.out.printf("    %c    |    %c    |    %c    \n", entries[3], entries[4], entries[5]);
+        System.out.printf("    %c    |    %c    |    %c    \n",this.board[3],this.board[4],this.board[5]);
         System.out.printf("         |         |         \n");
         System.out.printf("---------+---------+---------\n");
         System.out.printf("         |         |         \n");
-        System.out.printf("    %c    |    %c    |    %c    \n", entries[6], entries[7], entries[8]);
+        System.out.printf("    %c    |    %c    |    %c    \n",this.board[6],this.board[7],this.board[8]);
         System.out.printf("         |         |         \n\n");
     }
 }
