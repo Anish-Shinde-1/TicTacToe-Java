@@ -1,11 +1,10 @@
 package com.tictactoe.boards;
 
-import com.tictactoe.Controller;
 import com.tictactoe.NestedController;
 
 import java.util.ArrayList;
 
-public class NestedBoard extends NestedController {
+public class NestedBoard extends NestedController implements BaseBoard {
     ArrayList<MiniBoard> miniBoards = new ArrayList<>();
     boardState nestedBoardState;
 
@@ -15,16 +14,25 @@ public class NestedBoard extends NestedController {
         }
     }
 
-    public void setNestedboardState(boardState state){
+    @Override
+    public void setState(boardState state) {
         this.nestedBoardState = state;
     }
 
-    public boardState getNestedboardState() {
-        return nestedBoardState;
+    @Override
+    public boardState getState() {
+        return this.nestedBoardState;
     }
 
+    @Override
+    public void updateBoard(int index, char entry) {
+        miniBoards.get(index - 1).setState((entry == X)? boardState.X_WON : boardState.O_WON);
+    }
+
+    @Override
     public void render() {
         for (int mainrow = 1; mainrow <= 3; mainrow++) {
+
             if(mainrow == 1) {
                 System.out.print("\t                         |                           |                         \t\n");
             }
@@ -42,6 +50,7 @@ public class NestedBoard extends NestedController {
                     System.out.print("\t\t----+-----+----\t\t |\t\t----+-----+----\t\t |\t\t----+-----+----\t\t\n");
                 }
             }
+
             if(mainrow < 3) {
                 System.out.print("\t                         |                           |                         \t\n");
                 System.out.print("\t-------------------------+---------------------------+-------------------------\t\n");

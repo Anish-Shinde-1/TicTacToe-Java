@@ -1,25 +1,32 @@
 package com.tictactoe.boards;
 
-import com.tictactoe.Controller;
 import com.tictactoe.NestedController;
 
-public class MiniBoard extends NestedController {
-    private char[] miniBoard = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+public class MiniBoard extends NestedController implements BaseBoard{
+    private char[] miniBoard = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
     boardState miniboardState;
 
     public MiniBoard (){
         this.miniboardState = boardState.NOT_PLAYED;
     }
 
+    @Override
     public void setState(boardState state){
         this.miniboardState = state;
     }
 
+    @Override
     public boardState getState() {
-        return miniboardState;
+        return this.miniboardState;
     }
 
-    public void updateMiniBoard(int index, char entry) {
+    @Override
+    public void render() {
+
+    }
+
+    @Override
+    public void updateBoard(int index, char entry) {
         this.miniBoard[index-1] = entry;
     }
 

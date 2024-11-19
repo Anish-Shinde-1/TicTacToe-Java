@@ -1,14 +1,28 @@
 package com.tictactoe;
 
+import com.tictactoe.boards.Board;
 import com.tictactoe.boards.MiniBoard;
 import com.tictactoe.boards.NestedBoard;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
-public class NestedController extends Controller{
+public class NestedController extends Controller {
 
-    public void startGame(NestedBoard nestedTictactoe){
+    public void startFreeWillGame(NestedBoard currentNestedBoard){
         // implement logic hehe
+    }
+
+    public void startStrategicGame(NestedBoard currentNestedBoard){
+        // implement logic hehe
+    }
+
+    public void startRandomizedGame(NestedBoard currentNestedBoard){
+        // implement logic hehe
+    }
+
+    public void getInput(char value, MiniBoard currentBoard) {
+
     }
 
     public boolean checkNestedWin(ArrayList<MiniBoard> miniBoards) {

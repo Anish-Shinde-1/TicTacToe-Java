@@ -2,14 +2,9 @@ package com.tictactoe.boards;
 
 import com.tictactoe.Controller;
 
-public class Board extends Controller{
-    public char[] board = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+public class Board extends Controller implements BaseBoard{
+    public char[] board = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
     boardState state;
-
-    public Board (int mode){
-        super(mode);
-        this.state = boardState.NOT_PLAYED;
-    }
 
     public Board (){
         this.state = boardState.NOT_PLAYED;
