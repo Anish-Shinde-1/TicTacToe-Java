@@ -3,7 +3,7 @@ package com.tictactoe.boards;
 import com.tictactoe.NestedController;
 
 public class MiniBoard extends NestedController implements BaseBoard{
-    private char[] miniBoard = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+    public char[] miniBoard = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
     boardState miniboardState;
 
     public MiniBoard (){
@@ -22,7 +22,12 @@ public class MiniBoard extends NestedController implements BaseBoard{
 
     @Override
     public void render() {
-
+        System.out.printf("\n\n======== TIC TAC TOE ========\n\n");
+        System.out.printf("    %c  |  %c  |  %c \n", this.miniBoard[0], this.miniBoard[1],this.miniBoard[2]);
+        System.out.printf("  -----+------+-----\n");
+        System.out.printf("    %c  |  %c  |  %c \n",this.miniBoard[3],this.miniBoard[4],this.miniBoard[5]);
+        System.out.printf("  -----+------+-----\n");
+        System.out.printf("    %c  |  %c  |  %c \n",this.miniBoard[6],this.miniBoard[7],this.miniBoard[8]);
     }
 
     @Override
@@ -47,6 +52,7 @@ public class MiniBoard extends NestedController implements BaseBoard{
 
 //    public static void main(String[] args) {
 //        MiniBoard mb1 = new MiniBoard();
+//        mb1.render();
 //    }
 }
 
