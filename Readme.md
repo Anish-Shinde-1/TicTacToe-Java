@@ -1,23 +1,29 @@
-# TicTacToe Game
+# Ultimate TicTacToe
 
-A simple two-player TicTacToe game implemented in Java. Players alternate turns to place their marks (X or O) on a 3x3 grid. The game checks for a winner or a draw after every move. This project demonstrates basic game logic, input validation, and object-oriented programming in Java.
+Ultimate TicTacToe is a strategic and enhanced version of the classic TicTacToe game. It features a 3x3 main board where each cell contains a 3x3 nested mini-board. The game introduces exciting gameplay modes, AI opponents, and strategic twists for a more engaging experience.
 
-## Features
+---
+## **Features**
 
-- Two-player gameplay (player 1: X, player 2: O)
-- Input validation for valid moves
-- Checks for win conditions (horizontal, vertical, and diagonal)
-- Ends when there's a winner or the board is full (draw)
+- **Nested Gameplay:** Play on a 3x3 grid where each cell is a mini TicTacToe game.
+- **Four Game Modes:**
+    1. **Simple Mode:** Standard TicTacToe gameplay with no restrictions.
+    2. **Simple vs AI:** Play against an AI opponent using the Minimax algorithm for optimal decision-making.
+    3. **Strategic Mode:** Players must play on a mini-board corresponding to the previous player's move on the main board.
+    4. **Randomized Mode:** Adds unpredictability by randomly selecting the next mini-board for each player.
+- **Interactive Console Interface:** Built with Java to ensure smooth, text-based gameplay.
+- **Comprehensive Win Checks:** Automatically determines wins or draws for both mini-boards and the main board.
 
-## Getting Started
+---
 
-### Prerequisites
+## **How to Run**
 
-- Java 8 or higher
+### **Prerequisites**
+- Java 8 or higher.
 
-### How to Run
-
+### **Setup Steps**
 1. Clone this repository:
+
 ```bash
    git clone https://github.com/your-username/TicTacToe-Java.git
 ```
@@ -37,10 +43,45 @@ A simple two-player TicTacToe game implemented in Java. Players alternate turns 
    java com.tictactoe.TicTacToe
 ```
 
-## Gameplay
+---
 
-1. **Start the Game:** Enter player names. Player 1 gets X, Player 2 gets O.
-2. **Take Turns:** Players take turns to place their symbol on the board by selecting a number between 1 and 9 corresponding to a cell.
-3. **Winning the Game:** The first player to align three of their symbols horizontally, vertically, or diagonally wins.
-4. **End of Game:** The game ends when a player wins or all cells are filled, resulting in a draw.
+## **Gameplay Instructions**
 
+### **Game Rules**
+
+#### **Simple Board Rules** (Applicable to Modes 1 and 2)
+1. The game is played on a standard 3x3 TicTacToe board.
+2. Players alternate turns, placing their symbols (X or O) on the board.
+3. A player wins by aligning three of their symbols horizontally, vertically, or diagonally.
+4. The game ends in a draw if all cells are filled and no player wins.
+
+#### **Nested Board Rules** (Applicable to Modes 3 and 4)
+1. The game is played on a 3x3 main board where each cell contains a 3x3 mini-board.
+2. Players alternate turns, placing their symbols (X or O) on the mini-boards:
+    - **Winning a Mini-Board:** A player captures a mini-board by aligning three of their symbols horizontally, vertically, or diagonally within that board.
+    - **Capturing the Main Board:** The main board is updated when a player wins a mini-board. The player takes control of the corresponding cell on the main board.
+3. A player wins the game by capturing three cells in a row on the main board (horizontally, vertically, or diagonally).
+4. If the main board is completely filled without a winner, the game ends in a draw.
+
+---
+
+### **Game Modes**
+
+#### **Mode 1: Simple**
+- Standard gameplay on a single 3x3 board.
+- No AI involvement, strictly two-player gameplay.
+
+#### **Mode 2: Simple vs AI**
+- Standard gameplay on a single 3x3 board.
+- Player 1 competes against an AI opponent. The AI uses the Minimax algorithm to make optimal decisions.
+
+#### **Mode 3: Strategic**
+- Players are restricted to playing on a mini-board corresponding to the position of the previous player’s move on the main board.
+    - Example: If Player 1 places a mark in position 7 of a mini-board, Player 2 must play on mini-board 7.
+- If the corresponding mini-board is already won or drawn, the player can choose any other valid mini-board.
+
+#### **Mode 4: Randomized**
+- The mini-board for the next turn is randomly selected after every move.
+- Mini-boards that are already completed (won or drawn) are excluded from the randomization pool.
+
+---
